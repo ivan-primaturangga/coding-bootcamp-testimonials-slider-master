@@ -149,6 +149,7 @@ li {
       url("images/pattern-quotes.svg") no-repeat center bottom 35%,
       url("images/pattern-curve.svg") no-repeat bottom left;
       background-size: 80%, auto, auto;
+      height: 100vh;
   }
 
   .slider {

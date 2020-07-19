@@ -1,0 +1,205 @@
+/* Default style */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
+
+body {
+  margin: 0;
+  font-size: 32px;
+  font-family: "Inter", sans-serif;
+}
+
+p {
+  display: inline;
+}
+
+li {
+  list-style: none;
+}
+
+/* Styles */
+.testimonial {
+  margin: auto;
+  background: url("images/pattern-bg.svg") no-repeat 90%,
+    url("images/pattern-quotes.svg") no-repeat 20% 28%,
+    url("images/pattern-curve.svg") no-repeat left bottom;
+  height: 100vh;
+  width: 100%;
+}
+
+.slider {
+  margin: auto;
+  width: 75%;
+  position: relative;
+  top: 16%;
+  height: auto;
+}
+
+.slides {
+}
+
+.slides .quote {
+  z-index: 1;
+  position: absolute;
+  margin-top: 12%;
+  font-weight: 300;
+  color: hsl(240, 38%, 20%);
+  width: 60%;
+}
+
+.slides .quote .info {
+  margin-top: 20px;
+}
+
+.slides .quote .info h2 {
+  font-size: 20px;
+  display: inline;
+  font-weight: 700;
+}
+
+.slides .quote .info span {
+  font-size: 20px;
+  font-weight: 500;
+  color: hsl(240, 18%, 77%);
+}
+
+.slides .card-image {
+  z-index: 0;
+  position: absolute;
+  right: 0;
+}
+
+.slides .card-image img {
+  -webkit-box-shadow: 5px 5px 70px -20px hsl(240, 38%, 20%);
+  -moz-box-shadow: 5px 5px 70px -20px hsl(240, 38%, 20%);
+  box-shadow: 5px 5px 70px -20px hsl(240, 38%, 20%);
+}
+
+.controls {
+  z-index: 2;
+  bottom: -14px;
+  left: 10%;
+  position: absolute;
+}
+
+.control {
+  display: table-cell;
+}
+
+.next {
+  background: white;
+  padding: 5px 20px;
+  border-radius: 0rem 2rem 2rem 0rem;
+}
+
+.prev {
+  background: white;
+  padding: 5px 20px;
+  border-radius: 2rem 0rem 0rem 2rem;
+}
+
+.images {
+  -webkit-animation-name: images;
+  -webkit-animation-duration: 0.5s;
+  animation-name: images;
+  animation-duration: 0.5s;
+}
+@keyframes images {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  20% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 0.5s;
+  animation-name: fade;
+  animation-duration: 0.5s;
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .testimonial {
+    background: url("images/pattern-bg.svg") no-repeat center top 10%,
+      url("images/pattern-quotes.svg") no-repeat center bottom 35%,
+      url("images/pattern-curve.svg") no-repeat bottom left;
+      background-size: 80%, auto, auto;
+  }
+
+  .slider {
+    margin: auto;
+    width: 80%;
+    position: relative;
+    top: 10%;
+    height: auto;
+  }
+
+  .slides .quote {
+      text-align: center;
+    margin-top: 20%;
+    position: relative;
+    font-weight: 300;
+    color: hsl(240, 38%, 20%);
+    width: 100%;
+    display: block;
+  }
+  
+  .slides .quote .info h2 {
+    font-size: 20px;
+    display: block;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
+  
+  .slides .quote .info span {
+    font-size: 20px;
+    font-weight: 500;
+    color: hsl(240, 18%, 77%);
+  }
+
+  .slides .card-image {
+    z-index: auto;
+    position: relative;
+  }
+
+  .slides .card-image img {
+      margin: auto;
+      width: 80%;
+    -webkit-box-shadow: 5px 5px 70px -20px hsl(240, 38%, 20%);
+    -moz-box-shadow: 5px 5px 70px -20px hsl(240, 38%, 20%);
+    box-shadow: 5px 5px 70px -20px hsl(240, 38%, 20%);
+  }
+
+  .controls {
+    z-index: auto;
+    bottom: -14px;
+    left: 40%;
+    position: absolute;
+  }
+}

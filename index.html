@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testimonial">
+      <div class="slider">
+        <div class="slides">
+          <div class="card-image">
+            <img
+              class="showSlide images"
+              src="images/image-tanya.jpg"
+              alt="Tanya-image-testimonial"
+            />
+            <img
+              class="showSlide images"
+              src="images/image-john.jpg"
+              alt="Tanya-image-testimonial"
+            />
+            <div class="controls">
+              <div class="control prev" onclick="nextSlide(-1)">
+                <img src="images/icon-prev.svg" alt="icon-prev" />
+              </div>
+              <div class="control next" onclick="nextSlide(1)">
+                <img src="images/icon-next.svg" alt="icon-next" />
+              </div>
+            </div>
+          </div>
+          <div class="quote">
+            <li class="showText fade">
+              <p>
+                “ I’ve been interested in coding for a while but never taken the
+                jump, until now. I couldn’t recommend this course enough. I’m
+                now in the job of my dreams and so excited about the future. ”
+              </p>
+              <div class="info">
+                <h2>Tanya Sinclair</h2>
+                <span>UX Engineer</span>
+              </div>
+            </li>
+            <li class="showText fade">
+              <p>
+                “ If you want to lay the best foundation possible I’d recommend
+                taking this course. The depth the instructors go into is
+                incredible. I now feel so confident about starting up as a
+                professional developer. ”
+              </p>
+              <div class="info">
+                <h2>John Tarkpor</h2>
+                <span>Junior Front-end Developer</span>
+              </div>
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <script type="text/javascript">
+      var slide_index = 1;
+      displaySlides(slide_index);
+      function nextSlide(n) {
+        displaySlides((slide_index += n));
+      }
+      function displaySlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("showSlide");
+        var text = document.getElementsByClassName("showText");
+        if (n > slides.length) {
+          slide_index = 1;
+        }
+        if (n < 1) {
+          slide_index = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+          text[i].style.display = "none";
+        }
+        slides[slide_index - 1].style.display = "block";
+        text[slide_index - 1].style.display = "block";
+      }
+    </script>
+  </body>
+</html>
